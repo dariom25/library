@@ -1,4 +1,32 @@
 body{
     background-image: url(jaredd-craig-HH4WBGNyltc-unsplash.jpg);
     background-size: cover;
+    font-family: "Ubuntu";
+
+    display: grid;
+    gap: 2vh;
+}
+
+h1{
+    font-size: 4vw;
+    text-align: center;
+    color: aliceblue;
+    
+}
+
+.main-content{
+    padding: 0px 50px 0px 50px;
+}
+
+.add-book{
+    width: 15vw;
+    height: 10vh;
+    justify-content: center;
+
+    background-color: aliceblue;
+    font-size: 2vw;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
 }
