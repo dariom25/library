@@ -16,6 +16,34 @@ h1{
 
 .main-content{
     padding: 0px 50px 0px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.book{
+    background-color: aliceblue;
+    opacity: 0.8;
+    border-radius: 10px;
+    font-size: 1vw;
+    padding: 8px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
+
+    width: 20vw;
+    height: 20vh;
+}
+
+.book>p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.book>button{
+    grid-area: 1/2/span 3;
 }
 
 .add-book{
@@ -27,14 +55,14 @@ h1{
     font-size: 2vw;
     font-weight: 700;
     border-radius: 30px;
-    border: none;
+
 
     /*positioning of the button*/
 }
 
 .button{
     cursor: pointer;
-
+    border: none;
 }
 
 .button:hover{
