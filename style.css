@@ -31,7 +31,7 @@ h1{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 16px;
+    gap: 8px;
 
     width: 20vw;
     height: 20vh;
@@ -42,8 +42,28 @@ h1{
     padding: 0px;
 }
 
-.book>button{
+.title{
+    grid-area: 1/1/span 2;
+}
+
+.author{
+    grid-area: 3/1/span 2;
+}
+
+.pages{
+    grid-area: 5/1/span 2;
+}
+
+.read{
     grid-area: 1/2/span 3;
+}
+
+.remove{
+    grid-area: 4/2/span 3;
+}
+
+.material-icons{
+    color: red;
 }
 
 .add-book{
