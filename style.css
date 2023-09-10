@@ -21,12 +21,29 @@ h1{
 .add-book{
     width: 15vw;
     height: 10vh;
-    justify-content: center;
+    margin: auto;
 
     background-color: aliceblue;
     font-size: 2vw;
     font-weight: 700;
     border-radius: 30px;
     border: none;
+
+    /*positioning of the button*/
+}
+
+.button{
     cursor: pointer;
+
+}
+
+.button:hover{
+    background-color: rgb(238, 238, 238);
+ 
+}
+
+.button:active{
+    border: solid 2px black;
+    background-color: rgb(187, 185, 185);
+    box-shadow: 5px 5px 10px;
 }
