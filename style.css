@@ -17,7 +17,7 @@ h1{
 .main-content{
     padding: 0px 50px 0px 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
@@ -58,12 +58,23 @@ h1{
     grid-area: 1/2/span 3;
 }
 
+.read, .remove{
+    border-radius: 100px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+}
+
 .remove{
     grid-area: 4/2/span 3;
+
 }
 
 .material-icons{
-    color: red;
+    font-size: 150px;
+    /*größe irgendwie noch verändern*/
 }
 
 .add-book{
@@ -75,7 +86,6 @@ h1{
     font-size: 2vw;
     font-weight: 700;
     border-radius: 30px;
-
 
     /*positioning of the button*/
 }
