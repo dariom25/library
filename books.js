@@ -10,10 +10,11 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
     const book = new Book("Test", "Test Mustertest", "300", true);
     myLibrary.push(book);
+    openModal();
     displayBook();
 }
 
-function displayBook() { //es wird jedes durch das array gelooped und array.length hinzugefügt, ohne dass die alten karten verschwinden
+function displayBook() { 
     removeAllBooks();
     myLibrary.forEach((book) => {
         const mainContent = document.querySelector(".main-content")
@@ -63,4 +64,9 @@ function removeAllBooks() {
     while (allBooks.firstChild) {
         allBooks.removeChild(allBooks.firstChild);
     }
+}
+
+function openModal() {
+    const modal = document.querySelector(".modal");
+    modal.showModal();
 }
