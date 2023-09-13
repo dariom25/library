@@ -70,3 +70,7 @@ function openModal() {
     const modal = document.querySelector(".modal");
     modal.showModal();
 }
+
+//funktion erstellen, die die daten aufnimmt und ins array packt. 
+//eventuell nochmal die einzelnen funktionen und calls überarbeiten
+//closeModal() funktion erstellen
