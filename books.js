@@ -56,3 +56,10 @@ function displayBook() { //es wird jedes durch das array gelooped und array.leng
 function changeColor() {
 
 }
+
+function removeAllBooks() {
+    const allBooks = document.querySelector(".main-content");
+    while (allBooks.firstChild) {
+        allBooks.removeChild(allBooks.firstChild);
+    }
+}
