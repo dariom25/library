@@ -105,3 +105,29 @@ h1{
     background-color: rgb(187, 185, 185);
     box-shadow: 5px 5px 10px;
 }
+
+.modal{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    gap: 10px;
+
+    border-radius: 20px;
+
+    width: 400px;
+    height: 500px;
+
+}
+
+.modal>form{
+    display: grid;
+    gap: 10px;
+}
+
+fieldset{
+    display: grid;
+    gap: 3px;
+}
+
+label, .modal>div, .submit{
+    font-size: 1vw;
+}
