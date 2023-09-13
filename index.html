@@ -13,25 +13,34 @@
     <title>Library</title>
 </head>
 <body>
+    <dialog data-modal open class="modal">
+        <div class="opener">Please enter the book information!</div>
+        <form action="">
+            <fieldset>
+                <label for="title-of-book">Title of the book:</label>
+                <input type="text" name="title" id="title-of-book">
+            </fieldset>
+            <fieldset>
+                <label for="name-of-author">Name of the author:</label>
+                <input type="text" name="author" id="name-of-author">
+            </fieldset>
+            <fieldset>
+                <label for="no-of-pages">Number of Bookpages:</label>
+                <input type="text" name="pages" id="no-of-pages">
+            </fieldset>
+            <fieldset>
+                <label for="read-the-book">Have you already read the book?</label>
+                <input type="checkbox" name="read" id="read-the-book">
+            </fieldset>
+            <button class="button submit">Submit</button>
+        </form>
+    </dialog>
     <div class="header">
         <h1>Welcome to the <i>LIBRARY</i></h1>
     </div>
     <div class="main-content">
     </div>
-    <dialog data-modal open class="modal">
-        <div class="opener">Please enter the book information!</div>
-        <form action="">
-            <label for="title-of-book">Title of the book:</label>
-            <input type="text" name="title" id="title-of-book">
-            <label for="name-of-author">Name of the author:</label>
-            <input type="text" name="author" id="name-of-author">
-            <label for="no-of-pages">Number of Bookpages:</label>
-            <input type="text" name="pages" id="no-of-pages">
-            <label for="read-the-book">Have you already read the book?</label>
-            <input type="radio" name="read" id="read-the-book">
-            <button class="button submit">Submit</button>
-        </form>
-    </dialog>
+
     <button class="button add-book" onclick="addBookToLibrary()">ADD BOOK</button>
     <div class="footer">
         Photo by <a href="https://unsplash.com/@jaredd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jaredd Craig</a> on <a href="https://unsplash.com/photos/HH4WBGNyltc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
