@@ -14,6 +14,7 @@ function addBookToLibrary() {
 }
 
 function displayBook() { //es wird jedes durch das array gelooped und array.length hinzugefügt, ohne dass die alten karten verschwinden
+    removeAllBooks();
     myLibrary.forEach((book) => {
         const mainContent = document.querySelector(".main-content")
         const bookContainer = document.createElement("div");
