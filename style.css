@@ -99,11 +99,12 @@ h1{
 
 .button{
     cursor: pointer;
-    border: none;
+    border: 1px solid white;
 }
 
 .button:hover{
     background-color: rgb(238, 238, 238);
+    border: 1px solid black;
  
 }
 
@@ -115,7 +116,8 @@ h1{
 
 .modal{
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 9fr;
     gap: 10px;
 
     border-radius: 20px;
@@ -126,6 +128,7 @@ h1{
 }
 
 .modal>form{
+    grid-area: 2/1/span 2/span 2;
     display: grid;
     gap: 10px;
 }
@@ -135,6 +138,13 @@ fieldset{
     gap: 3px;
 }
 
-label, .modal>div, .submit{
+label, .modal>div, .submit, .close-button{
     font-size: 1vw;
+}
+
+.close-button{
+    height: 3vh;
+    width: 3vh;
+
+    justify-self: end;
 }
