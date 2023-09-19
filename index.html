@@ -13,8 +13,15 @@
     <title>Library</title>
 </head>
 <body>
-    <dialog data-modal open class="modal">
+
+    <div class="header">
+        <h1>Welcome to the <i>LIBRARY</i></h1>
+    </div>
+    <div class="main-content">
+    </div>
+    <dialog>
         <div class="opener">Please enter the book information!</div>
+        <button onclick="closeModal()">X</button>
         <form action="">
             <fieldset>
                 <label for="title-of-book">Title of the book:</label>
@@ -35,12 +42,6 @@
             <button class="button submit">Submit</button>
         </form>
     </dialog>
-    <div class="header">
-        <h1>Welcome to the <i>LIBRARY</i></h1>
-    </div>
-    <div class="main-content">
-    </div>
-
     <button class="button add-book" onclick="addBookToLibrary()">ADD BOOK</button>
     <div class="footer">
         Photo by <a href="https://unsplash.com/@jaredd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jaredd Craig</a> on <a href="https://unsplash.com/photos/HH4WBGNyltc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
