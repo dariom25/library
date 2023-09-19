@@ -67,8 +67,15 @@ function removeAllBooks() {
 }
 
 function openModal() {
-    const modal = document.querySelector(".modal");
+    const modal = document.querySelector("dialog");
+    modal.setAttribute("class", "modal");
     modal.showModal();
+}
+
+function closeModal() {
+    const modal = document.querySelector("dialog");
+    modal.removeAttribute("class")
+    modal.close()
 }
 
 //funktion erstellen, die die daten aufnimmt und ins array packt. 
