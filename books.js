@@ -1,17 +1,12 @@
 const myLibrary = []
+const modal = document.querySelector("dialog");
+
 
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
-}
-
-function addBookToLibrary() {
-    const book = new Book("Test", "Test Mustertest", "300", true);
-    myLibrary.push(book);
-    openModal();
-    displayBook();
 }
 
 function displayBook() { 
@@ -55,10 +50,6 @@ function displayBook() {
     });
 }
 
-function changeColor() {
-
-}
-
 function removeAllBooks() {
     const allBooks = document.querySelector(".main-content");
     while (allBooks.firstChild) {
@@ -66,17 +57,15 @@ function removeAllBooks() {
     }
 }
 
-function openModal() {
-    const modal = document.querySelector("dialog");
-    modal.setAttribute("class", "modal");
+const addBookToLibrary = document.querySelector(".add-book");
+addBookToLibrary.addEventListener("click", () => {
     modal.showModal();
-}
+})
 
-function closeModal() {
-    const modal = document.querySelector("dialog");
-    modal.removeAttribute("class")
-    modal.close()
-}
+const closeModalBtn = document.querySelector(".close-button");
+closeModalBtn.addEventListener("click", () => {
+    modal.close();
+})
 
 //funktion erstellen, die die daten aufnimmt und ins array packt. 
 //eventuell nochmal die einzelnen funktionen und calls überarbeiten
