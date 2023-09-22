@@ -1,5 +1,8 @@
 const myLibrary = []
 const modal = document.querySelector("dialog");
+const openModal = document.querySelector(".add-book");
+const closeModalBtn = document.querySelector(".close-button");
+const submitBtn = document.querySelector(".submit");
 
 
 function Book(title, author, pages, read) {
@@ -57,23 +60,22 @@ function removeAllBooks() {
     }
 }
 
-const addBookToLibrary = document.querySelector(".add-book");
-addBookToLibrary.addEventListener("click", () => { //die funktion wird beim klicken des buttons immer zu Ende ausgeführt
+openModal.addEventListener("click", () => {
     modal.showModal();
 })
 
-const closeModalBtn = document.querySelector(".close-button");
 closeModalBtn.addEventListener("click", () => {
     modal.close();
 })
 
-const submitBtn = document.querySelector(".submit")
 submitBtn.addEventListener("click", (event) => { //wird hier zu viel auf einmal gemacht in der funktion? aufteilen?
+    // "get" the user input
     const title = document.querySelector("#title-of-book");
     const author = document.querySelector("#name-of-author");
     const pages = document.querySelector("#no-of-pages")
     const read = document.querySelector("#read-the-book") // hier muss ich nochmal gucken, wie ich den value vernünftig kriege
 
+    //create new book object and push it into array
     const newBook = new Book(title.value, author.value, pages.value, read.value);
     myLibrary.push(newBook);
 
@@ -82,6 +84,4 @@ submitBtn.addEventListener("click", (event) => { //wird hier zu viel auf einmal 
     displayBook();
 });
 
-//funktion erstellen, die die daten aufnimmt und ins array packt. 
 //eventuell nochmal die einzelnen funktionen und calls überarbeiten
-//closeModal() funktion erstellen
