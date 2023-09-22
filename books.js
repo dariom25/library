@@ -68,17 +68,18 @@ closeModalBtn.addEventListener("click", () => {
 })
 
 const submitBtn = document.querySelector(".submit")
-submitBtn.addEventListener("click", (event) => {
+submitBtn.addEventListener("click", (event) => { //wird hier zu viel auf einmal gemacht in der funktion? aufteilen?
     const title = document.querySelector("#title-of-book");
     const author = document.querySelector("#name-of-author");
     const pages = document.querySelector("#no-of-pages")
-    const read = document.querySelector("#read-the-book")
+    const read = document.querySelector("#read-the-book") // hier muss ich nochmal gucken, wie ich den value vernünftig kriege
 
     const newBook = new Book(title.value, author.value, pages.value, read.value);
     myLibrary.push(newBook);
 
     event.preventDefault();
     modal.close();
+    displayBook();
 });
 
 //funktion erstellen, die die daten aufnimmt und ins array packt. 
