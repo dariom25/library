@@ -84,10 +84,12 @@ function changeColorBasedOnCheckbox(checkbox) {
 
 
 openModal.addEventListener("click", () => {
+    modal.setAttribute("class", "modal")
     modal.showModal();
 })
 
 closeModalBtn.addEventListener("click", () => {
+    modal.removeAttribute("class")
     modal.close();
 })
 
@@ -104,6 +106,7 @@ submitBtn.addEventListener("click", (event) => {
 
     event.preventDefault();
     modal.close();
+    modal.removeAttribute("class")
     displayBook();
 });
 
