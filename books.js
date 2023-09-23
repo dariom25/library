@@ -39,6 +39,7 @@ function displayBook() {
         readBtn.setAttribute("class", "read");
         const readIcon = document.createElement("i");
         readIcon.setAttribute("class", "material-icons");
+        readIcon.setAttribute("id", "read-icon");
         readIcon.textContent = "check_circle_outline";
         readBtn.appendChild(readIcon);
         bookContainer.appendChild(readBtn);
@@ -47,6 +48,7 @@ function displayBook() {
         removeBtn.setAttribute("class", "remove");
         const removeIcon = document.createElement("i");
         removeIcon.setAttribute("class", "material-icons");
+        removeIcon.setAttribute("id", "remove-icon");
         removeIcon.textContent = "highlight_off";
         removeBtn.appendChild(removeIcon);
         bookContainer.appendChild(removeBtn);
@@ -60,6 +62,27 @@ function removeAllBooks() {
     }
 }
 
+function changeColor(color) {
+    const readIcon = document.querySelector("#read-icon")
+    if (readIcon.hasAttribute("color", color) === false) {
+        readIcon.style.color = color;
+    }
+}
+
+function changeColorBasedOnCheckbox(checkbox) {
+    if (checkbox.checked === true) {
+        changeColor("green");
+    } else {
+        changeColor("red");
+    }
+}
+
+
+
+
+
+
+
 openModal.addEventListener("click", () => {
     modal.showModal();
 })
@@ -68,12 +91,12 @@ closeModalBtn.addEventListener("click", () => {
     modal.close();
 })
 
-submitBtn.addEventListener("click", (event) => { //wird hier zu viel auf einmal gemacht in der funktion? aufteilen?
+submitBtn.addEventListener("click", (event) => {
     // "get" the user input
     const title = document.querySelector("#title-of-book");
     const author = document.querySelector("#name-of-author");
-    const pages = document.querySelector("#no-of-pages")
-    const read = document.querySelector("#read-the-book") // hier muss ich nochmal gucken, wie ich den value vernünftig kriege
+    const pages = document.querySelector("#no-of-pages");
+    const read = document.querySelector("#read-the-book"); // hier muss ich nochmal gucken, wie ich den value vernünftig kriege
 
     //create new book object and push it into array
     const newBook = new Book(title.value, author.value, pages.value, read.value);
