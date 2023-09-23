@@ -41,6 +41,9 @@ function displayBook() {
         readIcon.setAttribute("class", "material-icons");
         readIcon.setAttribute("id", "read-icon");
         readIcon.textContent = "check_circle_outline";
+
+        changeColorBasedOnCheckbox(book, readIcon);
+
         readBtn.appendChild(readIcon);
         bookContainer.appendChild(readBtn);
 
@@ -62,26 +65,19 @@ function removeAllBooks() {
     }
 }
 
-function changeColor(color) {
-    const readIcon = document.querySelector("#read-icon")
-    if (readIcon.hasAttribute("color", color) === false) {
-        readIcon.style.color = color;
+function changeColor(color, icon) {
+    if (icon.hasAttribute("color", color) === false) {
+        icon.style.color = color;
     }
 }
 
-function changeColorBasedOnCheckbox(checkbox) {
-    if (checkbox.checked === true) {
-        changeColor("green");
+function changeColorBasedOnCheckbox(book, icon) {
+    if (book.read === true) {
+        changeColor("green", icon);
     } else {
-        changeColor("red");
+        changeColor("red", icon);
     }
 }
-
-
-
-
-
-
 
 openModal.addEventListener("click", () => {
     modal.setAttribute("class", "modal")
@@ -101,7 +97,7 @@ submitBtn.addEventListener("click", (event) => {
     const read = document.querySelector("#read-the-book"); // hier muss ich nochmal gucken, wie ich den value vernünftig kriege
 
     //create new book object and push it into array
-    const newBook = new Book(title.value, author.value, pages.value, read.value);
+    const newBook = new Book(title.value, author.value, pages.value, read.checked);
     myLibrary.push(newBook);
 
     event.preventDefault();
