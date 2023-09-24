@@ -3,6 +3,7 @@ const modal = document.querySelector("dialog");
 const openModal = document.querySelector(".add-book");
 const closeModalBtn = document.querySelector(".close-button");
 const submitBtn = document.querySelector(".submit");
+const readBtn = document.querySelector(".read")
 
 
 function Book(title, author, pages, read) {
@@ -47,6 +48,18 @@ function displayBook() {
         readBtn.appendChild(readIcon);
         bookContainer.appendChild(readBtn);
 
+        //eventlistener to change color of read status
+        readBtn.addEventListener("click", () => {
+            let color = window.getComputedStyle(readIcon).getPropertyValue("color");
+            let green = "rgb(0, 128, 0)"
+            let red = "rgb(255, 0, 0)"
+            if (color === green) {
+                changeColor("red", readIcon)
+            } else if (color === red) {
+                changeColor("green", readIcon)
+            }
+        });
+
         const removeBtn = document.createElement("button"); //hier muss removeBook funtion hinzugefügt werden
         removeBtn.setAttribute("class", "remove");
         const removeIcon = document.createElement("i");
@@ -66,9 +79,7 @@ function removeAllBooks() {
 }
 
 function changeColor(color, icon) {
-    if (icon.hasAttribute("color", color) === false) {
-        icon.style.color = color;
-    }
+    icon.style.color = color;
 }
 
 function changeColorBasedOnCheckbox(book, icon) {
@@ -80,14 +91,19 @@ function changeColorBasedOnCheckbox(book, icon) {
 }
 
 openModal.addEventListener("click", () => {
-    modal.setAttribute("class", "modal")
+    modal.setAttribute("class", "modal");
     modal.showModal();
 })
 
 closeModalBtn.addEventListener("click", () => {
-    modal.removeAttribute("class")
+    modal.removeAttribute("class");
     modal.close();
 })
+
+//eventlisteners and buttons
+
+
+
 
 submitBtn.addEventListener("click", (event) => {
     // "get" the user input
