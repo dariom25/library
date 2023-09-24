@@ -42,7 +42,7 @@ function displayBook() {
         readIcon.setAttribute("id", "read-icon");
         readIcon.textContent = "check_circle_outline";
 
-        changeColorBasedOnCheckbox(book, readIcon); //colors of all book are changing to their original color --> status von checkbox wird nicht geändert, aber jedes mal abgefragt 
+        changeColorBasedOnCheckbox(book, readIcon);
 
         readBtn.appendChild(readIcon);
         bookContainer.appendChild(readBtn);
@@ -72,7 +72,7 @@ function displayBook() {
 
         //eventlistener to delete a book from the library
         removeBtn.addEventListener("click", () => {
-            deleteBookFromLibrary()
+            deleteBookFromLibraryArray(book);
         })
     });
 }
@@ -96,9 +96,11 @@ function changeColorBasedOnCheckbox(book, icon) {
     }
 }
 
-function deleteBookFromLibrary() {
-    const indexOfBook = 0;
-    alert("book deleted")
+function deleteBookFromLibraryArray(book) {
+    const index = myLibrary.indexOf(book);
+    const removedBook = myLibrary.splice(index, 1);
+    removeAllBooks();
+    displayBook();
 }
 
 openModal.addEventListener("click", () => {
@@ -113,15 +115,12 @@ closeModalBtn.addEventListener("click", () => {
 
 //eventlisteners and buttons
 
-
-
-
 submitBtn.addEventListener("click", (event) => {
     // "get" the user input
     const title = document.querySelector("#title-of-book");
     const author = document.querySelector("#name-of-author");
     const pages = document.querySelector("#no-of-pages");
-    const read = document.querySelector("#read-the-book"); // hier muss ich nochmal gucken, wie ich den value vernünftig kriege
+    const read = document.querySelector("#read-the-book");
 
     //create new book object and push it into array
     const newBook = new Book(title.value, author.value, pages.value, read.checked);
