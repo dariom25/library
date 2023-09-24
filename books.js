@@ -3,7 +3,6 @@ const modal = document.querySelector("dialog");
 const openModal = document.querySelector(".add-book");
 const closeModalBtn = document.querySelector(".close-button");
 const submitBtn = document.querySelector(".submit");
-const readBtn = document.querySelector(".read")
 
 
 function Book(title, author, pages, read) {
@@ -36,14 +35,14 @@ function displayBook() {
         pages.textContent = "No. of pages: " + book.pages;
         bookContainer.appendChild(pages);
 
-        const readBtn = document.createElement("button"); //hier muss noch die changeColor Function hinzugefügt werden
+        const readBtn = document.createElement("button");
         readBtn.setAttribute("class", "read");
         const readIcon = document.createElement("i");
         readIcon.setAttribute("class", "material-icons");
         readIcon.setAttribute("id", "read-icon");
         readIcon.textContent = "check_circle_outline";
 
-        changeColorBasedOnCheckbox(book, readIcon);
+        changeColorBasedOnCheckbox(book, readIcon); //colors of all book are changing to their original color --> status von checkbox wird nicht geändert, aber jedes mal abgefragt 
 
         readBtn.appendChild(readIcon);
         bookContainer.appendChild(readBtn);
@@ -51,16 +50,18 @@ function displayBook() {
         //eventlistener to change color of read status
         readBtn.addEventListener("click", () => {
             let color = window.getComputedStyle(readIcon).getPropertyValue("color");
-            let green = "rgb(0, 128, 0)"
-            let red = "rgb(255, 0, 0)"
+            let green = "rgb(0, 128, 0)";
+            let red = "rgb(255, 0, 0)";
             if (color === green) {
-                changeColor("red", readIcon)
+                changeColor("red", readIcon);
+                book.read = false
             } else if (color === red) {
-                changeColor("green", readIcon)
+                changeColor("green", readIcon);
+                book.read = true
             }
         });
 
-        const removeBtn = document.createElement("button"); //hier muss removeBook funtion hinzugefügt werden
+        const removeBtn = document.createElement("button");
         removeBtn.setAttribute("class", "remove");
         const removeIcon = document.createElement("i");
         removeIcon.setAttribute("class", "material-icons");
@@ -68,6 +69,11 @@ function displayBook() {
         removeIcon.textContent = "highlight_off";
         removeBtn.appendChild(removeIcon);
         bookContainer.appendChild(removeBtn);
+
+        //eventlistener to delete a book from the library
+        removeBtn.addEventListener("click", () => {
+            deleteBookFromLibrary()
+        })
     });
 }
 
@@ -88,6 +94,11 @@ function changeColorBasedOnCheckbox(book, icon) {
     } else {
         changeColor("red", icon);
     }
+}
+
+function deleteBookFromLibrary() {
+    const indexOfBook = 0;
+    alert("book deleted")
 }
 
 openModal.addEventListener("click", () => {
