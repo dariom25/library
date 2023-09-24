@@ -148,3 +148,9 @@ label, .modal>div, .submit, .close-button{
 
     justify-self: end;
 }
+
+.footer{
+    justify-self: center;
+    font-size: 1.5vw;
+    
+}
