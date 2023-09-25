@@ -150,7 +150,12 @@ label, .modal>div, .submit, .close-button{
 }
 
 .footer{
-    justify-self: center;
-    font-size: 1.5vw;
-    
+    justify-self: left;
+    font-size: 1vw;
+    color: white;
+    align-self: flex-end;
+}
+
+.footer>a{
+    color: white;
 }
